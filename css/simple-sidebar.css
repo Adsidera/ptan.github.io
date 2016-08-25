@@ -1,0 +1,204 @@
+/**********************************************
+**          INDEX                            **
+**                                           **
+**          0.Typography                     **
+**          1.Toggle Styles                  **
+**          2.Sidebar Styles                 **
+**          3.Image, Footer & Logo Styles    **
+**          4.Media Queries                  **
+**                                           **
+**********************************************/
+
+
+ body {
+    overflow-x: hidden;
+    background-image: url("../images/book3.jpg");
+     background-size: cover;
+ }
+/* 0.Typography */
+h1, h2, h3{
+font-family: 'PT Sans Caption', sans-serif;
+}
+h1{
+font-size:4em;
+}
+p{
+    font-family: 'Noto Serif';
+    font-size: 40px;
+	font-style: italic;
+	font-weight: 500;
+}
+.bigger{
+    font-size: 2em;
+}
+.kern{
+    font-kerning: none;
+    font-weight: 600;
+}
+.light{
+    font-weight: 200;
+    letter-spacing: 0.1em;
+}
+/* 1.Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled {
+    padding-left: 250px;
+}
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* 2.Sidebar Styles */
+.nav-tabs{
+    border-bottom: none;
+}
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    font-size: 1.1em;
+    width: 100%;
+}
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 1.5em;
+    line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+.tg-txt{
+display:none;
+}
+#homeicon{
+    margin-left: -7%;
+    width:100%;
+}
+#homeicon a:hover, #homeicon a:focus, #homeicon a:visited{
+    color: chartreuse;
+    background: none;
+    border-color: none none none none;
+    border:none;
+}
+#mark {
+    font-size: 0.7em;
+    bottom:0;
+    position: absolute;
+    list-style: none;
+    
+}
+#mark li a{
+    text-decoration: none;
+    color: #999999;
+}
+#mark li a:active, #mark li a:focus{
+    text-decoration: none;
+    color: coral;
+}
+#mark li a:hover {
+    color: coral;
+}
+#mark li a:visited{
+    text-decoration: none;
+}
+/* 3.Image, Footer & Logo Styles */
+#image{
+background-size:cover;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: white;
+    background-size: cover;
+}
+#logo{
+    padding-left: 25%;
+}
+
+/* 4.Media Queries */
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+        
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
